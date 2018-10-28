@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+    <head>
+        <title>Ingreso Mis Perris</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'core/css/blog.css' %}">
+    </head>
+   
+<header> 
+        <img class="logo" src="{% static 'core/img/logo.png' %}" alt="mis perris logo">
+        <ul class="link_head">
+            <li>
+                <a href="{% url 'home' %}">Inicio</a>
+            </li>
+           
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+        <div class="container">
+            <div class="text-center" > 
+        
+            <h2>Ingreso a Mis Perris</h2>
+       
+    
+        <h1></h1>
+        <form action="" method="post">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Entrar">
+            <h1></h1>
+            <h1></h1>
+            <h4><p>¿Esta Registrado? <a href="{% url 'register' %}">Registrar</a></p></h4>
+        
+        
+        </form>
+    </div>
+    </div>
+
+    </body>
+                   
+            
+    
+</html>

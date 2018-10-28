@@ -1,0 +1,44 @@
+{%  extends 'core/base.html' %}
+
+{% block contenido3 %}
+<div class="container">
+
+    <div class="col-md-12">
+    <h2><strong>Listado de Mascotas</strong></h2>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Raza</th>
+            <th>Genero</th>
+            <th>Fecha de Ingreso</th>
+            <th>Fecha de Naciemiento</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+        {% for a in mascotas %}
+        <tr>
+            <td>{{ a.nombre }}</td>
+            <td>{{ a.raza.nombre }}</td>
+            <td>{{ a.genero }}</td>
+            <td>{{ a.fechaIngreso }}</td>
+            <td>{{ a.fechaNacimiento }}</td>
+            <td>{{ a.descripcion }}</td>
+            <td>{{ a.estado.descripcion }}</td>
+            <td>
+                <a href="{% url 'eliminar_mascota' a.id %}">Eliminar</a>
+                <a href="{% url 'modificar_mascota' a.id%}">Modificar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div> 
+</div>
+    {% if messages %}
+        {% for m in messages %}
+            <div>{{ m }}</div>
+        {% endfor %}
+    {% endif %}
+
+
+{% endblock contenido3 %}

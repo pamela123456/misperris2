@@ -1,0 +1,79 @@
+{% extends "core/base.html" %}
+
+{% block contenido3 %}
+<br>
+<br>
+<div class="container">
+
+<div class="col-md-12">
+<h2 class="text-center" ><strong>Formulario de adopción</strong></h2>
+<br>
+<form action="" id="postulanteFormulario" method="POST">
+        {% csrf_token %}
+        <label for="">Nombre completo:</label>
+        <input type="text" class="form-control" name="txtNombre" id="txtNombre">
+        <br>
+        
+        <label for="">Run:</label>
+        <input type="text" class="form-control" name="txtRun" id="txtRun" placeholder="19.123.456-7">
+        <br>
+        
+        <label for="">Fecha de Nacimiento:</label>
+        <input type="date" class="form-control"  name="txtFechaNacimiento" id="txtFechaNacimiento">
+        <br>
+            
+        <label for="">Región:</label>
+        <select  name="cboRegion" class="form-control" id="cboRegion">
+            <option value="">Seleccionar</option>
+
+            {% for m in regiones %}
+
+            <option value="{{ m.id }}">{{ m.nombre }} </option>
+            
+            {% endfor %}
+        </select>
+        <br>
+        
+        <label for="">Ciudad:</label>
+        <select  name="cboCiudad" class="form-control" id="cboCiudad">
+                <option value="">Seleccionar</option>
+
+                {% for c in ciudades %}
+
+                <option value="{{ c.id }}">{{ c.nombre }}</option>
+                
+                {% endfor %}
+        </select>
+        <br>
+        
+        <label for="">Tipo de Vivienda:</label>
+        <select  name="cboVivienda" class="form-control" id="cboVivienda">
+                <option value="">Seleccionar</option>
+
+                {% for n in viviendas  %}
+
+                <option value="{{ n.id }}">{{ n.descripcion }}</option>
+                
+                {% endfor %}
+        </select>
+        <br>
+       
+        <label for="">Teléfono de contacto:</label>
+        <input type="text" class="form-control" name="txtTelefono" id="txtTelefono">
+        <br>
+        
+        <label for="">Correo electrónico:</label>
+        <input type="text" class="form-control" name="txtCorreo" id="txtCorreo" placeholder="name@example.com">
+        <br>
+        <br>
+        <input type="submit" class="btn btn-info"  name="btnGuardar" id="btnGuardar" value="Guardar">
+    
+    </form>   
+
+    <h3>{{ mensaje }}</h3>
+</div> 
+</div>
+<br>
+<br>
+{% endblock contenido3 %}
+

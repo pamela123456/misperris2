@@ -1,0 +1,69 @@
+{% extends "core/base.html" %}
+
+{% block contenido3 %}
+<br>
+<br>
+<div class="container">
+
+<div class="col-md-12">
+<h2 class="text-center"><strong> Agregar Mascota</strong></h2>
+<br>
+<form action="" id="agregar_mascota" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Nombre mascota:</label>
+        <input type="text" class="form-control" name="txtNombreMascota" id="txtNombreMascota">
+        <br>
+        
+        <label for="">Fecha ingreso:</label>
+        <input type="date" class="form-control" name="txtFechaIngreso" id="txtFechaIngreso">
+
+        <br>
+        <label for="">Fecha de Nacimiento:</label>
+        <input type="date" class="form-control"  name="txtFechaNacimiento" id="txtFechaNacimiento">
+        <br>
+            
+        <label for="">Raza:</label>
+        <select  name="cboRaza" class="form-control" id="cboRaza">
+            <option value="">Seleccionar</option>
+
+            {% for r in razas %}
+
+            <option value="{{ r.id }}">{{ r.nombre }} </option>
+            
+            {% endfor %}
+        </select>
+        <br>
+        
+        <label for="">Genero (M/H):</label>
+        <input type="text" class="form-control" name="txtGenero" id="txtGenero">
+        <br>
+
+        <label for="">Descripcion:</label>
+        <input type="text" class="form-control" name="txtDescripcion" id="txtDescripcion">
+        <br>
+
+        <label for="">Estado</label>
+        <select name="cboEstado" class="form-control" id="cboEstado">
+                <option value="">Seleccionar</option>
+                {% for e in estado %}
+                <option value="{{ e.id }}">{{ e.descripcion }}</option>
+
+                {% endfor %}
+        
+        </select>
+        <br>
+        <label for="">Imagen:</label>
+        <input type="file" id='imageField'>
+        
+        <br>
+        <br>
+        <input type="submit" name="btnGuardar" class="btn btn-info" id="btnGuardar" value="Guardar">
+    
+    </form>    
+</div> 
+</div>
+<br>
+<br>
+<h3>{{ mensaje }}</h3>
+
+{% endblock contenido3 %}

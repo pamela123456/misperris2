@@ -1,0 +1,44 @@
+$(document).ready(function(){
+    $("#postulanteFormulario").validate({
+        rules:{
+            txtNombre:{
+                required:true,
+                minlength:3,
+                maxlength:100,
+              
+
+            },
+            txtRut:{
+                required:true,
+                minlength:3,
+                maxlength:12
+            },
+            txtFechaNacimiento:{
+                required:true,
+                date:true
+            },
+            cboRegion:{
+                required:true
+            },
+            cboCiudad:{
+                required:true
+            },
+            cboVivienda:{
+                required:true
+            },
+            txtTelefono:{
+                required:true,
+                minlength:3,
+                maxlength:20,
+                number:true
+            },
+            txtCorreo:{
+                required:true,
+                minlength:3,
+                maxlength:100,
+                email:true
+            }
+
+        }
+    })
+})

@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+
+{% block contenido3 %}
+
+<h2>Modificar</h2>
+<br>
+<form action="" id="agregar_mascota" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="hidden" name="txtId" id="txtId" value="{{ mascota.id }}">
+
+        <label for="">Nombre mascota:</label>
+        <input type="text"  name="txtNombreMascota" id="txtNombreMascota" value="{{ mascota.nombre }}">
+        <br>
+        
+        <label for="">Fecha ingreso:</label>
+        <input type="date" name="txtFechaIngreso" id="txtFechaIngreso" value="{{ mascota.fechaIngreso }}">
+
+
+        <label for="">Fecha de Nacimiento:</label>
+        <input type="date"   name="txtFechaNacimiento" id="txtFechaNacimiento" value="{{ mascota.fechaNacimiento }}">
+        <br>
+            
+        <label for="">Raza:</label>
+        <select  name="cboRaza" id="cboRaza">
+            <option value="">Seleccionar</option>
+
+            {% for r in raza %}
+
+            <option
+            {% if r.id = mascota.raza.id %}
+                {{'selected'}}
+            {% endif %}
+            
+            value="{{ r.id }}">{{ r.nombre }} </option>
+            
+            {% endfor %}
+        </select>
+        <br>
+        
+        <label for="">Genero (M/H):</label>
+        <input type="text"  name="txtGenero" id="txtGenero" value="{{ mascota.genero }}">
+        <br>
+       
+        <label for="">Descripcion:</label>
+        <input type="text"  name="txtDescripcion" id="txtDescripcion" value="{{ mascota.descripcion }}">
+        <br>
+
+        <label for="">Estado:</label>
+        <select name="cboEstado" id="cboEstado">
+                <option value="">Seleccionar</option>
+                {% for e in estado %}
+                <option 
+                {% if e.id = mascota.estado.id %}
+                    {{'selected'}}
+                {% endif %}
+                
+                value="{{ e.id }}">{{ e.descripcion}}</option>
+
+                {% endfor %}
+        
+        </select>
+
+        <label for="">Imagen</label>
+        
+        <img  src="{{ mascota.imagen_mascota }}" class="img-responsive">
+        
+        <br>
+        <br>
+        <input type="submit" name="btnModificar" id="btnModificar" value="Modificar">
+    
+    </form>    
+<h3>{{ mensaje }}</h3>
+{% endblock contenido3 %}

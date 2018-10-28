@@ -1,0 +1,337 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+header{
+width:100%;
+height: 80px;
+background-color: rgb(133,212,183)
+}
+
+.link_head{
+    display: flex;
+    justify-content: center;
+    float: right;
+    margin-top: 20px;
+    margin-right: 150px;
+}
+
+.link_head li{
+display: inline-block;
+margin-right: 20px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.link_head li a{
+color: white;
+text-decoration: none;
+}
+
+
+.logo{
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.landing{
+width: 100%;
+height: 100%;
+background-color: rgb(109, 204, 170);
+display: inline-block;
+}
+
+.imagen_landing{
+width: 55%;
+height: 300px;
+padding-top: 30px;
+margin: auto;
+display: block;    
+}
+
+.num{
+    width: 100%;
+    height: 110px;
+    display:flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    font-family: arial black;
+}
+
+.numero{
+    margin-left: 20px;
+    color:white;
+}
+
+.eslogan{
+    color: white;
+    margin-left: 110px;
+}
+
+.social{
+float: right;
+margin: 0;
+margin-right: 50px;
+
+}
+
+.social li{
+display: inline-block;
+margin-right: 10px;
+}
+
+.social li img{
+    height: 35px;
+    width: 35px;
+    transition: all 0.7s;
+    display: inline-block;
+}
+
+.social li img:hover{
+width: 50px;
+height: 50px;
+}
+
+.imagen_rescate{
+padding: 15px;
+width: 300px;
+height: 150px;
+
+}
+
+.imagen_crowfunding{
+
+width: 300px;
+height: 240px;
+}
+
+
+
+.contenido{
+    width:100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    line-height: 30px;
+    
+}
+
+.color{
+    background-color:  rgb(109, 204, 170);
+}
+
+.contenido1{
+    
+    text-align: end;
+    padding-right: 20px;
+    
+}
+
+.contenido1 hr{
+    width: 55px;
+    float: right;
+    height: 1px;
+    background-color: black;
+}
+
+.contenido2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+
+.contenido2 hr{
+    width: 55px;
+    float: left;
+    height: 1px;
+    background-color: black;
+}
+
+.contenido > div {
+   width: 50%;
+}
+
+footer{
+   
+    font-family: Arial, Helvetica, sans-serif;
+    height: 80px;
+    padding-left: 20px;
+    padding-top: 5px;
+    background-color: rgb(230,230, 230);
+    
+    
+}
+
+.boton{
+    display: block;
+    justify-content: center;
+    background-color: white;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    border-color: black;
+}
+
+.bx-wrapper{
+    background-color: rgb(109, 204, 170) !important;
+    border: none !important;
+}
+
+.imagengaleria{
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+    margin-block-end: 20px;
+    
+
+}
+
+
+.galeria{
+    padding-left: 30px;
+    height: auto;
+    background-color: rgb(133,212,183);
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+    
+    
+}
+
+.contenido3{
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+
+
+
+@media(max-width:1024px) {
+    
+    .galeria{
+        padding-left: 10px;
+
+    
+    }
+
+
+    .imagengaleria{
+ 
+        height: 100px;
+        margin-top: 10px;
+        margin-block-end: 10px;
+        
+     
+    
+    }
+   
+    header{
+        width:100%;
+        height: 180px; 
+    }
+
+    .link_head{
+        float: none;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link_head > li{
+        float: none;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .landing{
+        width: 100%;
+        height: auto;
+    }
+
+    .imagen_landing{
+        float: none;
+        margin: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .numero{
+       float:none;
+       margin: auto;
+       text-align: center;
+    }
+
+    .eslogan{
+        float: none;
+        margin: auto;
+        text-align: center;
+        margin-top:-20px;
+    }
+
+    .social{
+        float: none;
+        margin-top: auto;
+        margin-left: 95px;
+    }
+    .contenido > div{
+        width: 93%;
+    }
+
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        text-align: right;
+        margin: auto;
+    }
+
+    .contenido2{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        margin: auto;
+    }
+
+
+    .imagen_crowfunding{
+        display: flex;
+        width: 50%;
+        height: auto;  
+        float: none;
+        margin-left: 5px;
+    }
+
+    .imagen_rescate{
+        display: flex;
+        width: 50%;
+        height: auto;  
+        float: none;
+        margin-left: 50%;
+    }
+
+
+
+    .num{
+        flex-direction: column;
+        text-align: center;
+        line-height: 40px;  
+        padding: 10px;  
+    }
+
+    
+
+}
+   
+
